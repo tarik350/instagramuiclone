@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+In this project i am making instagram clone just for the ui using flutter.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
