@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:instagramuiclone/pages/account.dart';
+import 'package:instagramuiclone/pages/home.dart';
+import 'package:instagramuiclone/pages/notification.dart';
+import 'package:instagramuiclone/pages/reels.dart';
+import 'package:instagramuiclone/pages/search.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,11 +22,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Widget> children = [
-    Center(child: Text('home')),
-    Center(child: Text('search')),
-    Center(child: Text('reels')),
-    Center(child: Text('notification')),
-    Account()
+    UserHome(),
+    UserSearch(),
+    UserReels(),
+    UserNotification(),
+    UserAccount()
   ];
 
   @override
