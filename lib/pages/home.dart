@@ -9,14 +9,30 @@ class UserHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> people = ['tairk', 'sisay', 'zelalem', 'etetye', 'teshe'];
-    List<String> images = [
-      'assets/images/tarik teshome.jpg',
-      'assets/images/302307484_6196175547377844_8109071300482961392_n.jpg',
-      'assets/images/305988167_557900822804249_2187242437538528585_n.jpg',
-      'assets/images/305988167_557900822804249_2187242437538528585_n.jpg',
-      'assets/images/tarik teshome.jpg',
+    List<Users> users = [
+      Users(like: 400, name: 'tarik', image: 'assets/images/tarik teshome.jpg'),
+      Users(
+        like: 332,
+        name: 'sisay',
+        image:
+            'assets/images/302307484_6196175547377844_8109071300482961392_n.jpg',
+      ),
+      Users(
+        like: 120,
+        name: 'zelalem',
+        image:
+            'assets/images/305988167_557900822804249_2187242437538528585_n.jpg',
+      ),
+      Users(
+          like: 140, name: 'etetye', image: 'assets/images/tarik teshome.jpg'),
+      Users(
+        like: 1032,
+        name: 'teshe',
+        image:
+            'assets/images/305988167_557900822804249_2187242437538528585_n.jpg',
+      ),
     ];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -40,23 +56,35 @@ class UserHome extends StatelessWidget {
         Container(
             height: 130,
             child: ListView.builder(
-                itemCount: people.length,
+                itemCount: users.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return BubbleStories(
-                    text: people[index],
-                    image: images[index],
+                    text: users[index].name,
+                    image: users[index].image,
                   );
                 })),
         //posts
         Expanded(
           child: ListView.builder(
-              itemCount: people.length,
+              itemCount: users.length,
               itemBuilder: (context, index) {
-                return UserPost(name: people[index]);
+                return UserPost(
+                  name: users[index].name,
+                  image: users[index].image,
+                  likes: users[index].like,
+                );
               }),
         )
       ]),
     );
   }
+}
+
+class Users {
+  String name;
+  String image;
+  int like;
+
+  Users({required this.like, required this.name, required this.image});
 }

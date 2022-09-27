@@ -38,7 +38,7 @@ class BubbleStories extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: Image(
-                    image: AssetImage('assets/images/tarik teshome.jpg'),
+                    image: AssetImage(image),
                     fit: BoxFit.fitHeight,
                     width: 40,
                     height: 50,

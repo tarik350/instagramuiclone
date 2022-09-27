@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -5,7 +6,11 @@ import 'package:flutter/rendering.dart';
 
 class UserPost extends StatelessWidget {
   String name;
-  UserPost({Key? key, required this.name}) : super(key: key);
+  String image;
+  int likes;
+  UserPost(
+      {Key? key, required this.likes, required this.name, required this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +32,9 @@ class UserPost extends StatelessWidget {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.grey.shade300),
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Image.asset(image)),
                       ),
                       const SizedBox(
                         width: 12,
@@ -71,14 +79,65 @@ class UserPost extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Row(
-            children: const <Widget>[
+            children: <Widget>[
+              SizedBox(
+                child: Row(
+                  children: [
+                    Container(
+                      width: 30,
+                      //padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              child: Container(
+                            width: 15,
+                            height: 15,
+                            decoration: BoxDecoration(
+                                color: Colors.blue, shape: BoxShape.circle),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: Image.asset(
+                                    'assets/images/302307484_6196175547377844_8109071300482961392_n.jpg')),
+                          )),
+                          Positioned(
+                              left: 7,
+                              child: Container(
+                                width: 15,
+                                height: 15,
+                                decoration: BoxDecoration(
+                                    color: Colors.blue, shape: BoxShape.circle),
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: Image.asset(
+                                        'assets/images/305281012_1220010611890524_6919771896009000896_n.jpg')),
+                              )),
+                          Positioned(
+                              left: 15,
+                              child: Container(
+                                width: 15,
+                                height: 15,
+                                decoration: BoxDecoration(
+                                    color: Colors.blue, shape: BoxShape.circle),
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: Image.asset(image)),
+                              ))
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
               Text('liked by '),
               Text(
                 'sisay',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(' and'),
-              Text(' 200 others', style: TextStyle(fontWeight: FontWeight.bold))
+              Text('${likes}', style: TextStyle(fontWeight: FontWeight.bold))
             ],
           ),
         ),
