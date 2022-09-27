@@ -56,3 +56,34 @@ class BubbleStories extends StatelessWidget {
     );
   }
 }
+
+class HighLightStoies extends StatelessWidget {
+  String text;
+  HighLightStoies({Key? key, required this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            width: 70,
+            height: 70,
+            decoration: BoxDecoration(shape: BoxShape.circle),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Container(
+                  color: Colors.grey.shade500,
+                )),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(text)
+        ],
+      ),
+    );
+  }
+}

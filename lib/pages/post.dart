@@ -5,6 +5,6 @@ class UserReels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('reels'));
+    return Center(child: Text('post'));
   }
 }
