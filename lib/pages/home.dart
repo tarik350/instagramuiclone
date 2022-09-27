@@ -39,14 +39,26 @@ class UserHome extends StatelessWidget {
         elevation: 0,
         title:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text('Instagram'),
+          Text(
+            'Instagram',
+            style: TextStyle(color: Colors.black),
+          ),
           Row(
             children: [
-              Icon(Icons.add),
+              Icon(
+                Icons.add,
+                color: Colors.black,
+              ),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Icon(Icons.favorite)),
-              Icon(Icons.share)
+                  child: Icon(
+                    Icons.favorite,
+                    color: Colors.black,
+                  )),
+              Icon(
+                Icons.share,
+                color: Colors.black,
+              )
             ],
           )
         ]),

@@ -37,9 +37,9 @@ class BubbleStories extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
                 child: AspectRatio(
                   aspectRatio: 1,
-                  child: Image(
-                    image: AssetImage(image),
-                    fit: BoxFit.fitHeight,
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.fill,
                     width: 40,
                     height: 50,
                   ),

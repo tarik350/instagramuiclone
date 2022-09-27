@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -109,7 +108,7 @@ class UserPost extends StatelessWidget {
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.circular(50),
                                     child: Image.asset(
-                                        'assets/images/305281012_1220010611890524_6919771896009000896_n.jpg')),
+                                        'assets/images/tarik teshome.jpg')),
                               )),
                           Positioned(
                               left: 15,

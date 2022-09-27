@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 1;
 
   void _navigateBottomNavBar(int index) {
     setState(() {
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     UserHome(),
     UserSearch(),
     UserReels(),
-    UserNotification(),
+    UserShop(),
     UserAccount()
   ];
 
@@ -34,11 +34,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: children[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+          elevation: 0,
           currentIndex: _selectedIndex,
           onTap: _navigateBottomNavBar,
           type: BottomNavigationBarType.fixed,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
+          // showSelectedLabels: false,
+          // showUnselectedLabels: false,
           items: const [
             BottomNavigationBarItem(
                 icon: Icon(
@@ -48,8 +49,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.video_call), label: 'reals'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: 'notificaton'),
+            BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'shop'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'account'),
           ]),
     );
